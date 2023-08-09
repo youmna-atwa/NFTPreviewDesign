@@ -17,10 +17,43 @@ body {
     box-shadow: rgb(12 23 41) 20px 30px 28px, rgb(12 23 41) 18px 20px 10px;
 
 }
+.image {
+    display: inline-block;
+    position: relative;
+}
+.image .View-img {
+    display: none;
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    z-index: 99;
+    width: 30px;
+}
 .image img {
     width: 270px;
     border-radius: 10px;
 }
+.image:hover .View-img {
+   display: inline;
+}
+.image::after , .image::before {
+    background-color:  hsl(178, 100%, 50%);
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    transition: all 0.3s ease;
+    z-index: 1;
+    opacity: 0;
+}
+.image:hover::before , .image:hover::after {
+  opacity: 0.2;
+  cursor: pointer;
+}
+
 .Content .Time {
     display: flex;
     justify-content: space-between;
@@ -30,6 +63,12 @@ body {
     color:  hsl(0, 0%, 100%);
     font-family: 'Outfit';
     font-weight: 600;
+
+}
+.Content h3:hover {
+    color:hsl(178, 100%, 50%); 
+    cursor: pointer;
+    transition: all 0.3s ease;
 
 }
 .Content p {
@@ -92,6 +131,11 @@ color: hsl(0, 0%, 100%);
 font-weight: 400;
     font-family: 'Outfit';
 
+}
+.creation h5 span:hover {
+    color:hsl(178, 100%, 50%); 
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 .attribution {
     margin-block-start: 10px;
